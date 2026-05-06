@@ -97,3 +97,65 @@ Every ticket gets a personal acknowledgement before any work begins. Auto-replie
 **Template:**
 
 ```
+Hi [Name],
+
+Thanks for reaching out. I have logged your request as ticket #[number] 
+and assigned it [Priority] priority. 
+
+I will [respond with an update / have this resolved] by [time based on SLA].
+
+Let me know if anything changes or gets worse in the meantime.
+
+[Your name]
+IT Support -- TechBridge Solutions
+```
+
+This takes 60 seconds. It prevents follow-up calls, duplicate tickets, and users walking over to IT.
+
+---
+
+### Step 7: Start Working the Ticket
+
+Pull the relevant runbook and follow it. Document every action taken in the ticket notes as you go -- not after the fact.
+
+Notes should answer three questions:
+- What did you find?
+- What did you do?
+- What was the result?
+
+Vague notes like "checked settings" are not useful. "Checked DNS settings on CLIENT01 -- primary DNS was pointing to 8.8.8.8 instead of DC01 at 192.168.56.10. Updated to correct address and confirmed connectivity restored." is useful.
+
+---
+
+## Ticket Status Definitions
+
+| Status | Meaning |
+|---|---|
+| Open | Ticket received, not yet assigned or worked |
+| In Progress | Technician actively working the ticket |
+| Pending User Response | Waiting on information from the user -- SLA clock paused |
+| Escalated | Passed to Tier 2 or vendor |
+| Resolved | Fix applied, waiting for user confirmation |
+| Closed | User confirmed resolution or ticket auto-closed after 48 hours |
+
+Never skip from In Progress to Closed without going through Resolved first. User confirmation is required.
+
+---
+
+## End of Day Queue Check
+
+Before finishing for the day every technician checks:
+
+- [ ] All P1 and P2 tickets are resolved or actively escalated
+- [ ] All P3 tickets have had at least one update to the user today
+- [ ] No ticket has breached SLA without a documented reason
+- [ ] All tickets worked today have complete notes
+- [ ] Any ticket approaching SLA breach tomorrow is flagged for early attention
+
+---
+
+## Related Documents
+
+- `sla-policies/sla-definitions.md`
+- `ticket-workflows/escalation-matrix.md`
+- `runbooks/` -- all runbooks
