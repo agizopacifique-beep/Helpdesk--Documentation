@@ -1,66 +1,89 @@
-## What This Project Taught Me About IT Support
+# HELP DESK DOCUMENTATION SYSTEM
 
-Most people think help desk is about knowing the answers. It is not. It is about having a system that works when you do not know the answer -- a process that gets you to the right solution without making the user wait while you figure it out.
+![Support](https://img.shields.io/badge/IT-Help%20Desk%20Support-blue) ![Runbooks](https://img.shields.io/badge/Runbooks-9-green) ![MSP](https://img.shields.io/badge/Environment-MSP%20Ready-orange) ![Tier](https://img.shields.io/badge/Support-Tier%201%20%26%202-purple)
 
-That shift in thinking is what building this documentation forced me to confront.
+## PROJECT OVERVIEW
 
----
+Built a production-ready help desk documentation system modeled after how a real Managed Service Provider (MSP) operates across multiple customer networks. This project demonstrates the ability to work support tickets independently, manage priority in a fast-paced environment, escalate appropriately, and create and update detailed documentation and diagrams.
 
-### Triage Is a Skill, Not a Checklist
-
-The hardest part of writing the ticket triage workflow was not the steps -- it was deciding what makes something P1 versus P2. A server down is obvious. But what about one user who cannot access a shared folder that three other people in the same department can access fine? Is that P2 or P3?
-
-Getting that wrong in either direction has consequences. Call it P1 and you pull a technician off something more critical. Call it P4 and a person sits blocked for hours waiting for a response that should have come in 30 minutes.
-
-Triage is a judgment call that has to be made in under two minutes on every ticket. Building the escalation matrix taught me that good triage comes from having clear criteria written down before the ticket arrives -- not from deciding in the moment.
+Every runbook in this repo was written assuming the technician reading it is handling their eighth ticket of the day, has two more waiting, and has never seen this specific issue before. That constraint drives every formatting decision — specific commands instead of vague steps, exact escalation triggers instead of judgment calls, and ticket closure checklists instead of open-ended sign-offs.
 
 ---
 
-### Documentation Is Written for the Worst Day, Not the Best One
+## WHAT IS INCLUDED
 
-Every runbook in this repo was written assuming the technician reading it is handling their eighth ticket of the day, has two more waiting, and has never seen this specific error before.
-
-That constraint changed everything about how I wrote them. Steps like "check the network" got replaced with specific commands. "Contact the user" got replaced with exact language to use. Escalation triggers went from vague ("if it gets complicated") to specific ("if the issue persists after completing Step 4 and the user is completely unable to work").
-
-Vague documentation looks professional until someone needs to use it under pressure. Then it is useless.
-
----
-
-### Escalation Is Not Failure
-
-One of the most important things a Tier 1 technician can demonstrate is knowing when to stop. Trying to solve a problem that belongs at Tier 2 wastes time, frustrates the user, and can make the underlying issue worse.
-
-Building the escalation matrix taught me to think about escalation as a decision with criteria, not an admission of defeat. The criteria are defined before the ticket arrives. When they are met, escalation happens immediately -- not after 45 minutes of trying things that are not working.
-
-That is the professional response. Employers want technicians who know their lane.
+| Folder | Contents |
+|--------|---------|
+| runbooks/ | Step-by-step resolution guides for the most common help desk ticket types |
+| sla-policies/ | Response and resolution time commitments by priority level |
+| ticket-workflows/ | Ticket triage, escalation matrix, and queue management procedures |
 
 ---
 
-### SLA Is a Promise, Not a Target
+## RUNBOOK LIBRARY
 
-Response and resolution times in this documentation are not aspirational. They are commitments. A P2 ticket that gets a first response in 35 minutes instead of 30 is a breach -- even if the issue gets resolved perfectly.
-
-Understanding SLA changed how I think about ticket management. Every open ticket is a running clock. Priority determines how fast that clock runs. Managing a queue means knowing which clocks are about to run out and acting before they do -- not just working through tickets in the order they arrived.
-
----
-
-### Communication Is Half the Job
-
-Every runbook in this repo includes a step for communicating with the user. Not because it needed to be there for completeness, but because I kept realizing while writing that the technical steps alone were not enough.
-
-A user who does not know what is happening with their ticket will submit another one, call the helpdesk, or walk over to IT -- all of which interrupt the technician trying to fix the original issue. A 30-second update message prevents all of that.
-
-The best technical fix still produces a bad experience if the user is left in the dark. That is the part of help desk work that does not show up in certifications but shows up immediately on the job.
+| # | Runbook | Category | Tier |
+|---|---------|----------|------|
+| 01 | Password Reset | Account Management | Tier 1 |
+| 02 | Account Lockout | Account Management | Tier 1 |
+| 03 | New User Onboarding | Account Management | Tier 1 |
+| 04 | Software Installation | Desktop Support | Tier 1 |
+| 05 | Network Troubleshooting (TCP/IP, DNS, DHCP, VPN) | Networking | Tier 1/2 |
+| 06 | Email Configuration (POP, IMAP, Exchange, Outlook) | Email Support | Tier 1 |
+| 07 | VPN Access Request | Remote Access | Tier 1 |
+| 08 | Network Printer Setup & Troubleshooting | Hardware Support | Tier 1 |
+| 09 | Mac OS Basic Troubleshooting | Desktop Support | Tier 1 |
 
 ---
 
-### What Employers Are Actually Looking For
+## KEY SKILLS DEMONSTRATED
 
-After building this I understand why help desk job descriptions ask for "strong communication skills" and "ability to prioritize in a fast-paced environment." Those are not filler phrases.
+- Working support tickets independently with accurate status updates
+- Triage and priority management across concurrent tickets
+- Escalation procedures with clear criteria for Tier 1 to Tier 2 handoff
+- SLA response and resolution time management
+- Documentation standards used in real MSP environments
+- Communication templates for keeping users informed during resolution
+- After-hours support rotation guidelines
 
-They describe the two things that separate someone who can fix computers from someone who can run a support operation:
+---
 
-- Can you tell a non-technical person what is happening in plain language while you are working on it?
-- Can you look at five open tickets and immediately know which one needs your attention first?
+## REAL-WORLD APPLICATION
 
-This project was built to demonstrate both.
+This documentation system is built to reflect MSP operations across multiple customer networks. Each runbook includes:
+
+- Exact resolution steps with command line references
+- Escalation triggers with specific conditions
+- Ticket closure checklists
+- User communication language
+- Common failure points and their fixes
+
+---
+
+## LESSONS LEARNED
+
+### TRIAGE IS A SKILL, NOT A CHECKLIST
+The hardest part of building this system was defining what makes a ticket P1 versus P2. Getting that wrong in either direction has consequences — pull a technician off something critical or leave a blocked user waiting too long. Good triage requires clear criteria written down before the ticket arrives, not decisions made in the moment.
+
+### DOCUMENTATION IS WRITTEN FOR THE WORST DAY
+Every runbook was written assuming the technician is on their eighth ticket of the day with two more waiting. Vague steps like "check the network" were replaced with specific commands. Escalation triggers went from "if it gets complicated" to exact conditions tied to specific steps.
+
+### ESCALATION IS NOT FAILURE
+Knowing when to stop and escalate is one of the most valuable Tier 1 skills. This project taught me to treat escalation as a decision with predefined criteria — not an admission of defeat. When the criteria are met, escalation happens immediately.
+
+### SLA IS A PROMISE, NOT A TARGET
+Every open ticket is a running clock. Priority determines how fast that clock runs. Managing a queue means knowing which clocks are about to expire and acting before they do — not working tickets in arrival order.
+
+### COMMUNICATION IS HALF THE JOB
+Every runbook includes a user communication step because a user who does not know what is happening will submit another ticket, call the helpdesk, or walk over to IT — all of which interrupt the technician fixing the original issue. A 30-second update prevents all of that.
+
+---
+
+## RELATED PROJECTS
+
+- [AWS Config + Lambda Security Remediation](https://github.com/agizopacifique-beep/AWS-Config-Lambda-Security-Remediation)
+- [Active Directory & Group Policy Project](https://github.com/agizopacifique-beep/AD-and-Group-Policy-Project)
+
+---
+
+*Built by Pacifique Agizo | CompTIA Security+ Certified | B.S. Cybersecurity in Progress*
